@@ -105,7 +105,7 @@ public class Principal extends javax.swing.JFrame{
         jMenuItem22.setText("jMenuItem22");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Gestión de Operaciones");
+        setTitle("Gestión de Operaciones Cantera S.A");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setName("Operaciones"); // NOI18N
         getContentPane().setLayout(null);
@@ -162,9 +162,9 @@ public class Principal extends javax.swing.JFrame{
 
         jMenuBar2.add(jMenu5);
 
-        jMenu7.setText("Presencias");
+        jMenu7.setText("Taller");
 
-        jMenuPresenciaVesp.setText("Nueva");
+        jMenuPresenciaVesp.setText("Nueva Orden");
         jMenuPresenciaVesp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuPresenciaVespActionPerformed(evt);
@@ -225,7 +225,7 @@ public class Principal extends javax.swing.JFrame{
 
         jMenu6.add(jMenuBuscaFaltas);
 
-        jMenu8.setText("Inconsistencia");
+        jMenu8.setText("Ordenes");
 
         jMenuItem17.setText("Por Fecha");
         jMenuItem17.addActionListener(new java.awt.event.ActionListener() {

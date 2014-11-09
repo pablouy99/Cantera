@@ -64,7 +64,6 @@ public class ModifFuncionario extends javax.swing.JLayeredPane{
         jRadioButton1 = new javax.swing.JRadioButton();
 
         setToolTipText("Chofer, Cargador, Mecanico, Supervisor de Trafico, Supervisor de Turno, Supervisor General, Maquinista, Peon, Tractorista, Capataz");
-        setLayout(null);
 
         BotonBorraFuncionario.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         BotonBorraFuncionario.setText("Borrar Funcionario");
@@ -181,7 +180,7 @@ public class ModifFuncionario extends javax.swing.JLayeredPane{
 
         jComboCategoria.setEditable(true);
         jComboCategoria.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Chofer", "Cargador", "Mecanico", "Supervisor de Trafico", "Supervisor de Turno", "Supervisor General", "Maquinista", "Peon", "Tractorista", "Capataz" }));
+        jComboCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Chofer", "Mecanico", "Supervisor", "Maquinista", "Peon", "Tractorista", "Capataz" }));
         jComboCategoria.setName(""); // NOI18N
         jComboCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.9" maxVersion="1.9">
   <NonVisualComponents>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
@@ -16,9 +16,6 @@
   <Properties>
     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
       <Font name="Tahoma" size="14" style="0"/>
-    </Property>
-    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[0, 0]"/>
     </Property>
   </Properties>
   <AuxValues>
@@ -336,17 +333,15 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="10">
+          <StringArray count="8">
             <StringItem index="0" value="Chofer"/>
-            <StringItem index="1" value="Cargador"/>
-            <StringItem index="2" value="Mecanico"/>
-            <StringItem index="3" value="Supervisor de Trafico"/>
-            <StringItem index="4" value="Supervisor de Turno"/>
-            <StringItem index="5" value="Supervisor General"/>
-            <StringItem index="6" value="Maquinista"/>
-            <StringItem index="7" value="Peon"/>
-            <StringItem index="8" value="Tractorista"/>
-            <StringItem index="9" value="Capataz"/>
+            <StringItem index="1" value="Mecanico"/>
+            <StringItem index="2" value="Supervisor"/>
+            <StringItem index="3" value="Supervisor General"/>
+            <StringItem index="4" value="Maquinista"/>
+            <StringItem index="5" value="Peon"/>
+            <StringItem index="6" value="Tractorista"/>
+            <StringItem index="7" value="Capataz"/>
           </StringArray>
         </Property>
         <Property name="name" type="java.lang.String" value="" noResource="true"/>
@@ -376,12 +371,10 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
-            <StringItem index="0" value="Recoleccion"/>
-            <StringItem index="1" value="Areas Verdes"/>
-            <StringItem index="2" value="Vertedero"/>
-            <StringItem index="3" value="Barrido"/>
-            <StringItem index="4" value="Espacios Publicos"/>
+          <StringArray count="3">
+            <StringItem index="0" value="Oficina"/>
+            <StringItem index="1" value="Planta"/>
+            <StringItem index="2" value="Calle"/>
           </StringArray>
         </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -398,7 +391,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="14" style="2"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Concesion"/>
+        <Property name="text" type="java.lang.String" value="Ubicacion"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">

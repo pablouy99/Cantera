@@ -73,7 +73,6 @@ public class iFuncionario extends javax.swing.JLayeredPane {
         jButton2.setText("jButton2");
 
         setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        setMinimumSize(new java.awt.Dimension(0, 0));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         jLabel1.setText("Num Funcionario");
@@ -129,7 +128,7 @@ public class iFuncionario extends javax.swing.JLayeredPane {
 
         jComboBox3.setEditable(true);
         jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Chofer", "Cargador", "Mecanico", "Supervisor de Trafico", "Supervisor de Turno", "Supervisor General", "Maquinista", "Peon", "Tractorista", "Capataz" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Chofer", "Mecanico", "Supervisor", "Supervisor General", "Maquinista", "Peon", "Tractorista", "Capataz" }));
         jComboBox3.setName(""); // NOI18N
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,7 +146,7 @@ public class iFuncionario extends javax.swing.JLayeredPane {
 
         jComboBox4.setEditable(true);
         jComboBox4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Recoleccion", "Areas Verdes", "Vertedero", "Barrido", "Espacios Publicos" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Oficina", "Planta", "Calle" }));
         jComboBox4.setMinimumSize(null);
         jComboBox4.setName(""); // NOI18N
         jComboBox4.addActionListener(new java.awt.event.ActionListener() {
@@ -157,7 +156,7 @@ public class iFuncionario extends javax.swing.JLayeredPane {
         });
 
         jLabelLibre1.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
-        jLabelLibre1.setText("Concesion");
+        jLabelLibre1.setText("Ubicacion");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         jLabel2.setText("Chapa");
@@ -221,20 +220,17 @@ public class iFuncionario extends javax.swing.JLayeredPane {
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jRadioButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(652, 652, 652))
-                                    .addGroup(layout.createSequentialGroup()
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 611, Short.MAX_VALUE)
-                                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 543, Short.MAX_VALUE)
+                                            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(jLabelLibre1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(jLabelLibre, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -320,6 +316,29 @@ public class iFuncionario extends javax.swing.JLayeredPane {
                 .addGap(470, 470, 470)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+        setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jSeparator1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabel7, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jButton3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabelLibre, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jComboBox2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jTextBusca, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jButton4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jComboBox3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jButton5, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jComboBox4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabelLibre1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jComboTurno, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabelLibre2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jTextBusca3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jTextBusca5, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jTextBusca6, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabel6, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jRadioButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
