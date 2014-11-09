@@ -82,7 +82,7 @@
             </MenuItem>
             <Menu class="javax.swing.JMenu" name="jMenuModificaFunc">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Modificar"/>
+                <Property name="text" type="java.lang.String" value="Modificar Datos"/>
               </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="jModifFunc">
@@ -111,25 +111,13 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuBorraFuncActionPerformed"/>
               </Events>
             </MenuItem>
-          </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu7">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Taller"/>
-          </Properties>
-          <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuPresenciaVesp">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Nueva Orden"/>
+                <Property name="text" type="java.lang.String" value="Presencia"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuPresenciaVespActionPerformed"/>
               </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuModificaDatos">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Modificar Datos"/>
-              </Properties>
             </MenuItem>
             <Menu class="javax.swing.JMenu" name="jMenuInconsistencias">
               <Properties>
@@ -151,6 +139,29 @@
                 </MenuItem>
               </SubComponents>
             </Menu>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Taller"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuOrdenServicio">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Orden de Servicio"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuOrdenServicioActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuModificaDatos">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Modificar Orden"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuModificaDatosActionPerformed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu10">
@@ -207,7 +218,7 @@
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenu8">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ordenes"/>
+                <Property name="text" type="java.lang.String" value="Orden"/>
               </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="jMenuItem17">
@@ -235,7 +246,7 @@
             </Menu>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuClientes">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Clientes"/>
+                <Property name="text" type="java.lang.String" value="Respuesto"/>
               </Properties>
             </MenuItem>
           </SubComponents>

@@ -13,12 +13,10 @@ import java.util.ArrayList;
  */
 public class Operaciones {
     private clsFuncionario func = new clsFuncionario();
-    private clsSeccion seccion;
-    private clsUnidad unidad;
-    private clsRuta ruta;
-    /**
-     * @param args the command line arguments
-     */
+    private clsUnidad unidad = new clsUnidad();
+    private boolean resultado= false;
+    
+    
     public static void main(String[] args) {
         // TODO code application logic here
         Principal principal = new Principal();
@@ -96,28 +94,7 @@ public class Operaciones {
         func.setActivo(pActivo);
     }
     
-    public String buscarRecorrido(String barrio){
-        String resultado = ruta.buscarRecorrido(barrio);
-        return resultado;
-    }
-    
-    public ArrayList<String> buscarRuta(int pRuta, int altaObaja){
-        ArrayList<String> resultado = new ArrayList<String>();
-        resultado = ruta.buscarRuta(pRuta, altaObaja);
-       
-        return resultado;
-    }
-    
-    public int buscarTurno(String pRuta, int altaObaja){
-        int resultado = ruta.buscarTurno(pRuta , altaObaja);
-        return resultado;
-    }
-    
-    public int buscarFrecuencia(String pRuta, int altaObaja){
-        int resultado = ruta.buscarFrecuencia(pRuta, altaObaja);
-        return resultado;
-    }
-   
+ 
 public int normalizaGetTurno(int turno){
       switch (turno){
                            case 1: turno = 0;
@@ -172,5 +149,27 @@ public int normalizaSetTurno(int turno){
     return variosFunc;
  }
  
-
+ public ArrayList buscarUnidad(String uni){
+        ArrayList result = new ArrayList();
+        
+        result = unidad.buscarUnidad(uni);
+                     
+    return result;
+ }
+ 
+ public boolean ingresaOrden(String nroOrden, String fecha, String uni, String generadaPor, String descripcion){
+     boolean resultado=false;
+     
+    int orden = Integer.parseInt(nroOrden);
+     
+    resultado = unidad.ingresaOrden(orden, fecha, uni, generadaPor, descripcion);
+     
+     
+     return resultado;
+ } 
+ 
+ public int ultimaOrden(){
+     return unidad.ultimaOrden()+1;
+ }
+ 
 }

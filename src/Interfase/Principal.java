@@ -25,7 +25,8 @@ public class Principal extends javax.swing.JFrame{
     ArrayList func = new ArrayList();
     public JTable table;
     public DefaultTableModel model;
-   public jPanelInconsistencia inco;
+    public jPanelInconsistencia inco;
+    public jPanelOrdenServicio orden;
     
     /**
      * Creates new form Principal
@@ -66,12 +67,13 @@ public class Principal extends javax.swing.JFrame{
         jModifFunc = new javax.swing.JMenuItem();
         jMenuModifFuncChapa = new javax.swing.JMenuItem();
         jMenuBorraFunc = new javax.swing.JMenuItem();
-        jMenu7 = new javax.swing.JMenu();
         jMenuPresenciaVesp = new javax.swing.JMenuItem();
-        jMenuModificaDatos = new javax.swing.JMenuItem();
         jMenuInconsistencias = new javax.swing.JMenu();
         jMenuIncoNueva = new javax.swing.JMenuItem();
         jMenuIncoBuscar = new javax.swing.JMenuItem();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuOrdenServicio = new javax.swing.JMenuItem();
+        jMenuModificaDatos = new javax.swing.JMenuItem();
         jMenu10 = new javax.swing.JMenu();
         nuevoCliente = new javax.swing.JMenuItem();
         modificarCliente = new javax.swing.JMenuItem();
@@ -132,7 +134,7 @@ public class Principal extends javax.swing.JFrame{
         });
         jMenu5.add(jMenuNuevoFuncionario);
 
-        jMenuModificaFunc.setText("Modificar");
+        jMenuModificaFunc.setText("Modificar Datos");
 
         jModifFunc.setText("Por Funcionario");
         jModifFunc.addActionListener(new java.awt.event.ActionListener() {
@@ -160,20 +162,13 @@ public class Principal extends javax.swing.JFrame{
         });
         jMenu5.add(jMenuBorraFunc);
 
-        jMenuBar2.add(jMenu5);
-
-        jMenu7.setText("Taller");
-
-        jMenuPresenciaVesp.setText("Nueva Orden");
+        jMenuPresenciaVesp.setText("Presencia");
         jMenuPresenciaVesp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuPresenciaVespActionPerformed(evt);
             }
         });
-        jMenu7.add(jMenuPresenciaVesp);
-
-        jMenuModificaDatos.setText("Modificar Datos");
-        jMenu7.add(jMenuModificaDatos);
+        jMenu5.add(jMenuPresenciaVesp);
 
         jMenuInconsistencias.setText("Inconsistencias");
 
@@ -188,7 +183,27 @@ public class Principal extends javax.swing.JFrame{
         jMenuIncoBuscar.setText("Buscar");
         jMenuInconsistencias.add(jMenuIncoBuscar);
 
-        jMenu7.add(jMenuInconsistencias);
+        jMenu5.add(jMenuInconsistencias);
+
+        jMenuBar2.add(jMenu5);
+
+        jMenu7.setText("Taller");
+
+        jMenuOrdenServicio.setText("Orden de Servicio");
+        jMenuOrdenServicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuOrdenServicioActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuOrdenServicio);
+
+        jMenuModificaDatos.setText("Modificar Orden");
+        jMenuModificaDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuModificaDatosActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuModificaDatos);
 
         jMenuBar2.add(jMenu7);
 
@@ -225,7 +240,7 @@ public class Principal extends javax.swing.JFrame{
 
         jMenu6.add(jMenuBuscaFaltas);
 
-        jMenu8.setText("Ordenes");
+        jMenu8.setText("Orden");
 
         jMenuItem17.setText("Por Fecha");
         jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
@@ -248,7 +263,7 @@ public class Principal extends javax.swing.JFrame{
 
         jMenu6.add(jMenu8);
 
-        jMenuClientes.setText("Clientes");
+        jMenuClientes.setText("Respuesto");
         jMenu6.add(jMenuClientes);
 
         jMenuBar2.add(jMenu6);
@@ -346,15 +361,30 @@ public class Principal extends javax.swing.JFrame{
 
     private void jMenuIncoNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuIncoNuevaActionPerformed
            if (inco==null){ 
-            this.inco = new jPanelInconsistencia();
-            this.add(inco, 0);
-            this.pack();
-            inco.setVisible(true);
+                this.inco = new jPanelInconsistencia();
+                this.add(inco, 0);
+                this.pack();
+                inco.setVisible(true);
            }else{
-           inco.setVisible(true);
+                inco.setVisible(true);
            }
             
     }//GEN-LAST:event_jMenuIncoNuevaActionPerformed
+
+    private void jMenuModificaDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuModificaDatosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuModificaDatosActionPerformed
+
+    private void jMenuOrdenServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuOrdenServicioActionPerformed
+            if (orden==null){ 
+                this.orden = new jPanelOrdenServicio();
+                this.add(orden, 0);
+                this.pack();
+                orden.setVisible(true);
+            }else{
+                orden.setVisible(true);
+            }
+    }//GEN-LAST:event_jMenuOrdenServicioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -428,6 +458,7 @@ public class Principal extends javax.swing.JFrame{
     private javax.swing.JMenuItem jMenuModificaDatos;
     private javax.swing.JMenu jMenuModificaFunc;
     private javax.swing.JMenuItem jMenuNuevoFuncionario;
+    private javax.swing.JMenuItem jMenuOrdenServicio;
     private javax.swing.JMenuItem jMenuPresenciaVesp;
     private javax.swing.JMenuItem jModifFunc;
     private javax.swing.JPanel jPanel1;

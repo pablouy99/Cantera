@@ -77,8 +77,6 @@ public class jPanelInconsistencia extends javax.swing.JLayeredPane {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextAreaDescripcion = new javax.swing.JTextArea();
 
-        setPreferredSize(getMaximumSize());
-
         jLabel1.setText("DIA");
 
         jComboBoxCausa.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -165,6 +163,11 @@ public class jPanelInconsistencia extends javax.swing.JLayeredPane {
 
         jTextChapa.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTextChapa.setMaximumSize(new java.awt.Dimension(2, 20));
+        jTextChapa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextChapaActionPerformed(evt);
+            }
+        });
         jTextChapa.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextChapaKeyPressed(evt);
@@ -453,6 +456,10 @@ public class jPanelInconsistencia extends javax.swing.JLayeredPane {
     private void jTextAreaDescripcionFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextAreaDescripcionFocusLost
         justificacion = (String) jTextAreaDescripcion.getText();
     }//GEN-LAST:event_jTextAreaDescripcionFocusLost
+
+    private void jTextChapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextChapaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextChapaActionPerformed
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
