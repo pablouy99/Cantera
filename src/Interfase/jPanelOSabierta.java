@@ -6,6 +6,7 @@
 package Interfase;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import operaciones.Operaciones;
 import operaciones.clsOrdenDeServicio;
@@ -16,27 +17,37 @@ import operaciones.clsOrdenDeServicio;
  */
 public class jPanelOSabierta extends javax.swing.JPanel {
     private DefaultTableModel model;
+    private Principal principal;
+    private jPanelCerrarOrden cerrarOrden;
     private String[] cosa;
     int filaDeLaTabla = 0;
     private ArrayList borrados = new ArrayList();
-    
+    String[] DatosDeBorrados = new String[4];
     /**
      * Creates new form jPanelOSabierta
      */
     public jPanelOSabierta() {
         initComponents();
+        iniciarDatos();
+    }
+
+    jPanelOSabierta(Principal aThis) {
+       this.principal = aThis;
+       initComponents();
+       iniciarDatos();
     }
     
     public void rellenarTabla(String[] correccion){
         this.cosa = correccion;
         this.model.addRow(correccion);
         this.jTableOS.setModel(model);
-    
+        
     }
     public void iniciarDatos(){
         int i=0;
-           Operaciones operac = new Operaciones();
-           ArrayList uni = new ArrayList();
+        this.jButtonCerrarOrden.setEnabled(false);
+        Operaciones operac = new Operaciones();
+        ArrayList uni = new ArrayList();
            
            uni = operac.listarOSabierta();
            
@@ -75,6 +86,9 @@ public class jPanelOSabierta extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableOS = new javax.swing.JTable();
+        jButtonAceptar = new javax.swing.JButton();
+        jButtonCancelar = new javax.swing.JButton();
+        jButtonCerrarOrden = new javax.swing.JButton();
 
         setPreferredSize(getMaximumSize());
 
@@ -96,44 +110,108 @@ public class jPanelOSabierta extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTableOS);
 
+        jButtonAceptar.setText("Aceptar");
+        jButtonAceptar.setEnabled(false);
+        jButtonAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAceptarActionPerformed(evt);
+            }
+        });
+
+        jButtonCancelar.setText("Cancelar");
+        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarActionPerformed(evt);
+            }
+        });
+
+        jButtonCerrarOrden.setText("Cerrar Orden");
+        jButtonCerrarOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCerrarOrdenActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButtonCerrarOrden)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonCerrarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTableOSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableOSMouseClicked
-        //String[] DatosDeBorrados = new String[3];
-        
-            if (evt.getClickCount() == 2 && !evt.isConsumed()){
+        if (evt.getClickCount() == 2 && !evt.isConsumed()){
+                this.jButtonCerrarOrden.setEnabled(true);
                 
-                
-                /*this.filaDeLaTabla = jTableOS.getSelectedRow();
+                this.filaDeLaTabla = jTableOS.getSelectedRow();
                 DatosDeBorrados[0] = (String) model.getValueAt(filaDeLaTabla, 0);
                 DatosDeBorrados[1] = (String) model.getValueAt(filaDeLaTabla, 1);
                 DatosDeBorrados[2] = (String) model.getValueAt(filaDeLaTabla, 2);
+                DatosDeBorrados[3] = (String) model.getValueAt(filaDeLaTabla, 3);
+                
                 this.borrados.add(DatosDeBorrados);
-                model.removeRow(filaDeLaTabla);
+                //model.removeRow(filaDeLaTabla);
                 this.jTableOS.setModel(model);
-                */
-            }
+                
+        }
     }//GEN-LAST:event_jTableOSMouseClicked
+
+    private void jButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAceptarActionPerformed
+        //if (justificacion.isEmpty()){
+            JOptionPane.showMessageDialog(null,"Hola aun sin determinar");
+       // }
+
+    }//GEN-LAST:event_jButtonAceptarActionPerformed
+
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+        this.setVisible(false);
+        this.jButtonCerrarOrden.setEnabled(false);
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
+
+    private void jButtonCerrarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarOrdenActionPerformed
+        // = new jPanelCerrarOrden();
+             if (cerrarOrden==null){ 
+                this.cerrarOrden = new jPanelCerrarOrden(Integer.parseInt(DatosDeBorrados[0]), model, filaDeLaTabla);
+                principal.add(cerrarOrden, 0);
+                principal.pack();
+                cerrarOrden.setVisible(true);
+                this.setVisible(false);
+            }else{
+                 cerrarOrden.setVisible(true);
+            }
+            
+    }//GEN-LAST:event_jButtonCerrarOrdenActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAceptar;
+    private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JButton jButtonCerrarOrden;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableOS;
+    public javax.swing.JTable jTableOS;
     // End of variables declaration//GEN-END:variables
 }

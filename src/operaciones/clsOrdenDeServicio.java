@@ -6,8 +6,7 @@
 package operaciones;
 
 import Persistencia.pOrdenServicio;
-import Persistencia.pUnidad;
-import com.sun.jmx.remote.util.OrderClassLoaders;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,7 +19,7 @@ public class clsOrdenDeServicio {
     private String genera;
     private String descripcion;
 
-    pOrdenServicio orden = new pOrdenServicio();
+    pOrdenServicio pOrden = new pOrdenServicio();
     
     public int getNumeroOrden() {
         return numeroOrden;
@@ -71,9 +70,25 @@ public class clsOrdenDeServicio {
     }
 
     public int ultimaOrden() {
-        return orden.ultimaOS();
+        return pOrden.ultimaOS();
+    }
+
+    ArrayList listarOSabiertas() {
+        ArrayList result = new ArrayList();
+            
+       result = pOrden.listarOSabiertas();
+        
+        return result;
     }
     
     
+
+   public boolean CerrarOrden(int nroOrden, String trabajos) {
+        boolean resultado = false;
+     
+        resultado = pOrden.CerrarOrden(nroOrden, trabajos);
+    
+     return resultado;
+    }
     
 }

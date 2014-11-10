@@ -402,7 +402,7 @@ public class Principal extends javax.swing.JFrame{
 
     private void jMenuOSabiertaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuOSabiertaActionPerformed
         if (osAbierta==null){ 
-                this.osAbierta = new jPanelOSabierta();
+                this.osAbierta = new jPanelOSabierta(this);
                 this.add(osAbierta, 0);
                 this.pack();
                 osAbierta.setVisible(true);

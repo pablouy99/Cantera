@@ -177,18 +177,25 @@ public int normalizaSetTurno(int turno){
         ArrayList resultado = new ArrayList();
         ArrayList ordenesAbiertas = new ArrayList();
      int i = 0;
-        //resultado = func.listarTurno();
-     for (i=0; i < resultado.size(); i=i+3){
-        clsOrdenDeServicio orden = new clsOrdenDeServicio();
-               orden.setNumeroOrden(Integer.parseInt(resultado.get(i).toString()));
-               orden.setMatricula(resultado.get(i+1).toString());
-               orden.setFecha(resultado.get(i+2).toString());
-               orden.setGenera(resultado.get(i+2).toString());
+        resultado = orden.listarOSabiertas();
+     for (i=0; i < resultado.size(); i=i+5){
+        clsOrdenDeServicio ordenes = new clsOrdenDeServicio();
+               ordenes.setNumeroOrden(Integer.parseInt(resultado.get(i).toString()));
+               ordenes.setFecha(resultado.get(i+1).toString());
+               ordenes.setMatricula(resultado.get(i+2).toString());
+               ordenes.setGenera(resultado.get(i+3).toString());
+               ordenes.setDescripcion(resultado.get(i+4).toString());
                
-               ordenesAbiertas.add(orden);
+               ordenesAbiertas.add(ordenes);
      }
     return ordenesAbiertas;
         
+    }
+
+    public boolean CerrarOrden(String text, String trabajos) {
+        boolean resultado = false;
+        resultado = orden.CerrarOrden(Integer.parseInt(text), trabajos);
+     return resultado;
     }
  
 }
