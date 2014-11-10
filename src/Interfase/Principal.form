@@ -148,10 +148,18 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuOrdenServicio">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Orden de Servicio"/>
+                <Property name="text" type="java.lang.String" value="Nueva OS"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuOrdenServicioActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuOSabierta">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ordenes Abiertas"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuOSabiertaActionPerformed"/>
               </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuModificaDatos">

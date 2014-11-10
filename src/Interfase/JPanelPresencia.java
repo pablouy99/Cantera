@@ -6,11 +6,7 @@
 
 package Interfase;
 
-import java.awt.BorderLayout;
-import java.awt.Toolkit;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 import javax.swing.table.DefaultTableModel;
 import operaciones.Operaciones;
 import operaciones.clsFuncionario;
@@ -60,6 +56,8 @@ public class JPanelPresencia extends javax.swing.JPanel {
         jButtonGuardarPresencia1 = new javax.swing.JButton();
         jButtonCorregir = new javax.swing.JButton();
         jButtonCorregir1 = new javax.swing.JButton();
+
+        setPreferredSize(getMaximumSize());
 
         jTablePresencia.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

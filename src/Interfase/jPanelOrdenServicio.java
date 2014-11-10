@@ -66,6 +66,8 @@ public class jPanelOrdenServicio extends javax.swing.JLayeredPane {
         jTextAreaDescripcion = new javax.swing.JTextArea();
         jTextField1 = new javax.swing.JTextField();
 
+        setPreferredSize(getMaximumSize());
+
         jLabel1.setText("DIA");
 
         jComboBoxGeneradaPor.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N

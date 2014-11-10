@@ -96,16 +96,5 @@ public class clsUnidad {
           */  
     return result;
     }
-
-    public boolean ingresaOrden(int nroOrden, String fecha, String unidad, String generadaPor, String descripcion){
-        boolean resultado=false;
-        
-        resultado = pUnidad.ingresaOrden(nroOrden, fecha, unidad, generadaPor, descripcion);
-        
-        return resultado;
-    }
-
-    public int ultimaOrden() {
-        return unidad.ultimaOS();
-    }
+    
 }

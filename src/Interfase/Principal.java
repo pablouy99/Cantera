@@ -27,6 +27,7 @@ public class Principal extends javax.swing.JFrame{
     public DefaultTableModel model;
     public jPanelInconsistencia inco;
     public jPanelOrdenServicio orden;
+    public jPanelOSabierta osAbierta;
     
     /**
      * Creates new form Principal
@@ -73,6 +74,7 @@ public class Principal extends javax.swing.JFrame{
         jMenuIncoBuscar = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenuOrdenServicio = new javax.swing.JMenuItem();
+        jMenuOSabierta = new javax.swing.JMenuItem();
         jMenuModificaDatos = new javax.swing.JMenuItem();
         jMenu10 = new javax.swing.JMenu();
         nuevoCliente = new javax.swing.JMenuItem();
@@ -189,13 +191,21 @@ public class Principal extends javax.swing.JFrame{
 
         jMenu7.setText("Taller");
 
-        jMenuOrdenServicio.setText("Orden de Servicio");
+        jMenuOrdenServicio.setText("Nueva OS");
         jMenuOrdenServicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuOrdenServicioActionPerformed(evt);
             }
         });
         jMenu7.add(jMenuOrdenServicio);
+
+        jMenuOSabierta.setText("Ordenes Abiertas");
+        jMenuOSabierta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuOSabiertaActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuOSabierta);
 
         jMenuModificaDatos.setText("Modificar Orden");
         jMenuModificaDatos.addActionListener(new java.awt.event.ActionListener() {
@@ -381,10 +391,25 @@ public class Principal extends javax.swing.JFrame{
                 this.add(orden, 0);
                 this.pack();
                 orden.setVisible(true);
+                orden.jTextUnidad.setText(null);
+                orden.jTextUnidad.requestFocus();
             }else{
+                orden.jTextUnidad.setText("");
+                orden.jTextUnidad.requestFocus();
                 orden.setVisible(true);
             }
     }//GEN-LAST:event_jMenuOrdenServicioActionPerformed
+
+    private void jMenuOSabiertaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuOSabiertaActionPerformed
+        if (osAbierta==null){ 
+                this.osAbierta = new jPanelOSabierta();
+                this.add(osAbierta, 0);
+                this.pack();
+                osAbierta.setVisible(true);
+           }else{
+                osAbierta.setVisible(true);
+           }
+    }//GEN-LAST:event_jMenuOSabiertaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -458,6 +483,7 @@ public class Principal extends javax.swing.JFrame{
     private javax.swing.JMenuItem jMenuModificaDatos;
     private javax.swing.JMenu jMenuModificaFunc;
     private javax.swing.JMenuItem jMenuNuevoFuncionario;
+    private javax.swing.JMenuItem jMenuOSabierta;
     private javax.swing.JMenuItem jMenuOrdenServicio;
     private javax.swing.JMenuItem jMenuPresenciaVesp;
     private javax.swing.JMenuItem jModifFunc;

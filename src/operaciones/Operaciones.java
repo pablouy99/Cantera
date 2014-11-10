@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Operaciones {
     private clsFuncionario func = new clsFuncionario();
     private clsUnidad unidad = new clsUnidad();
+    private clsOrdenDeServicio orden = new clsOrdenDeServicio();
     private boolean resultado= false;
     
     
@@ -160,16 +161,34 @@ public int normalizaSetTurno(int turno){
  public boolean ingresaOrden(String nroOrden, String fecha, String uni, String generadaPor, String descripcion){
      boolean resultado=false;
      
-    int orden = Integer.parseInt(nroOrden);
+    int miOrden = Integer.parseInt(nroOrden);
      
-    resultado = unidad.ingresaOrden(orden, fecha, uni, generadaPor, descripcion);
+    resultado = orden.ingresaOrden(miOrden, fecha, uni, generadaPor, descripcion);
      
      
      return resultado;
  } 
  
  public int ultimaOrden(){
-     return unidad.ultimaOrden()+1;
+     return orden.ultimaOrden()+1;
  }
+
+    public ArrayList listarOSabierta() {
+        ArrayList resultado = new ArrayList();
+        ArrayList ordenesAbiertas = new ArrayList();
+     int i = 0;
+        //resultado = func.listarTurno();
+     for (i=0; i < resultado.size(); i=i+3){
+        clsOrdenDeServicio orden = new clsOrdenDeServicio();
+               orden.setNumeroOrden(Integer.parseInt(resultado.get(i).toString()));
+               orden.setMatricula(resultado.get(i+1).toString());
+               orden.setFecha(resultado.get(i+2).toString());
+               orden.setGenera(resultado.get(i+2).toString());
+               
+               ordenesAbiertas.add(orden);
+     }
+    return ordenesAbiertas;
+        
+    }
  
 }

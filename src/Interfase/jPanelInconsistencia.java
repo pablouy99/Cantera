@@ -77,6 +77,8 @@ public class jPanelInconsistencia extends javax.swing.JLayeredPane {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextAreaDescripcion = new javax.swing.JTextArea();
 
+        setPreferredSize(getMaximumSize());
+
         jLabel1.setText("DIA");
 
         jComboBoxCausa.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
