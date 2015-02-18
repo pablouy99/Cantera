@@ -23,6 +23,7 @@ public class Principal extends javax.swing.JFrame{
     private iBuscar iBusca;
     private iBuscaChapa iBuscaChapa;
     ArrayList func = new ArrayList();
+    private Fondo f;
     public JTable table;
     public DefaultTableModel model;
     public jPanelInconsistencia inco;
@@ -34,7 +35,7 @@ public class Principal extends javax.swing.JFrame{
      */
     public Principal() {
         initComponents();
-        Fondo f = new Fondo();
+        f = new Fondo();
         this.add(f);
         this.setLayout(new BorderLayout());
         this.setExtendedState(Principal.MAXIMIZED_BOTH);   
@@ -291,7 +292,7 @@ public class Principal extends javax.swing.JFrame{
     }//GEN-LAST:event_jMenuCerrarActionPerformed
 
     private void jMenuNuevoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuNuevoFuncionarioActionPerformed
-                // TODO add your handling code here:
+       removerModulos();
        try{
           this.remove(modFun);
        }catch(Exception e){
@@ -305,7 +306,7 @@ public class Principal extends javax.swing.JFrame{
     }//GEN-LAST:event_jMenuNuevoFuncionarioActionPerformed
 
     private void jModifFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jModifFuncActionPerformed
-        // TODO add your handling code here:
+        removerModulos();
        try{
             modFun = new ModifFuncionario();
             this.add(modFun, 0);
@@ -317,18 +318,17 @@ public class Principal extends javax.swing.JFrame{
     }//GEN-LAST:event_jModifFuncActionPerformed
 
     private void jMenuBorraFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuBorraFuncActionPerformed
+        removerModulos();
         this.modFun = new ModifFuncionario();
     
-    if (this.contains(modFun.getLocation())){
-       this.remove(modFun);
-    }
-      this.modFun = new ModifFuncionario();
-      this.add(modFun, 0);
-      modFun.setVisible(false);
-      this.iBusca = new iBuscar(modFun);
-      iBusca.setVisible(true);
-     
-             
+        if (this.contains(modFun.getLocation())){
+            this.remove(modFun);
+        }
+            this.modFun = new ModifFuncionario();
+            this.add(modFun, 0);
+            modFun.setVisible(false);
+            this.iBusca = new iBuscar(modFun);
+            iBusca.setVisible(true);
     }//GEN-LAST:event_jMenuBorraFuncActionPerformed
 
     private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
@@ -340,7 +340,7 @@ public class Principal extends javax.swing.JFrame{
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
     private void jMenuModifFuncChapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuModifFuncChapaActionPerformed
-    
+        removerModulos();
         try{
             this.modFun = new ModifFuncionario();
             this.add(modFun, 0);
@@ -358,19 +358,24 @@ public class Principal extends javax.swing.JFrame{
     }//GEN-LAST:event_jMenuBuscaFaltaFuncActionPerformed
 
     private void jMenuPresenciaVespActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuPresenciaVespActionPerformed
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        removerModulos();
+        try{
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 	   //get current date time with Date()
-        Date date = new Date();        
-        this.presencia = new JPanelPresencia();
-        this.add(presencia, 0);
-        presencia.jFechaPesencia.setText(dateFormat.format(date));
-        this.pack();
-        presencia.setVisible(true);
-              
+            Date date = new Date();        
+            this.presencia = new JPanelPresencia();
+            this.add(presencia, 0);
+            presencia.jFechaPesencia.setText(dateFormat.format(date));
+            pack();
+            presencia.setVisible(true);
+        }catch(Exception e){
+       
+       }           
     }//GEN-LAST:event_jMenuPresenciaVespActionPerformed
 
     private void jMenuIncoNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuIncoNuevaActionPerformed
-           if (inco==null){ 
+        removerModulos();   
+        if (inco==null){ 
                 this.inco = new jPanelInconsistencia();
                 this.add(inco, 0);
                 this.pack();
@@ -386,7 +391,8 @@ public class Principal extends javax.swing.JFrame{
     }//GEN-LAST:event_jMenuModificaDatosActionPerformed
 
     private void jMenuOrdenServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuOrdenServicioActionPerformed
-            if (orden==null){ 
+        removerModulos();   
+        if (orden==null){ 
                 this.orden = new jPanelOrdenServicio();
                 this.add(orden, 0);
                 this.pack();
@@ -401,6 +407,7 @@ public class Principal extends javax.swing.JFrame{
     }//GEN-LAST:event_jMenuOrdenServicioActionPerformed
 
     private void jMenuOSabiertaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuOSabiertaActionPerformed
+        removerModulos();
         if (osAbierta==null){ 
                 this.osAbierta = new jPanelOSabierta(this);
                 this.add(osAbierta, 0);
@@ -411,6 +418,17 @@ public class Principal extends javax.swing.JFrame{
            }
     }//GEN-LAST:event_jMenuOSabiertaActionPerformed
 
+    public void removerModulos(){
+        if (modFun!=null){
+            this.remove(modFun);
+        }if (osAbierta!=null){
+            this.remove(osAbierta);
+        }if (orden!=null){
+            this.remove(orden);
+        }if (inco!=null){
+            this.remove(inco);} 
+    }
+    
     /**
      * @param args the command line arguments
      */

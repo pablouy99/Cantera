@@ -135,9 +135,11 @@ public class jPanelCerrarOrden extends javax.swing.JPanel {
         
         resultado = opera.CerrarOrden(jTextNroOrden.getText(), jTextAreaTrabajosRealizados.getText().trim());
         if (resultado){
-        jPanelOSabierta osAbierta = new jPanelOSabierta();
-        modelo.removeRow(filaDeLaTabla);
-        osAbierta.jTableOS.setModel(modelo);
+            jPanelOSabierta osAbierta = new jPanelOSabierta();
+            modelo.removeRow(filaDeLaTabla);
+            osAbierta.jTableOS.setModel(modelo);
+            jTextAreaTrabajosRealizados.setText("");
+            jTextNroOrden.setText("");
         }else{
             JOptionPane.showMessageDialog(null,"La orden No se Cerró correctamente");
         }

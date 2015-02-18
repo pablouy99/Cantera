@@ -190,6 +190,8 @@ public class jPanelOSabierta extends javax.swing.JPanel {
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
         this.setVisible(false);
         this.jButtonCerrarOrden.setEnabled(false);
+        super.remove(this);
+        
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jButtonCerrarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarOrdenActionPerformed

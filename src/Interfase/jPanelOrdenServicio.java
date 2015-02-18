@@ -306,14 +306,15 @@ public class jPanelOrdenServicio extends javax.swing.JLayeredPane {
     }//GEN-LAST:event_jTextField1ActionPerformed
   
     private void regresarAlInicio(){
-        this.setVisible(false);
+       
         jTextUnidad.setText("");
         jTextUnidad.requestFocus();
         jComboBoxGeneradaPor.setEnabled(false);
         jButtonAceptar.setEnabled(false);
         jTextAreaDescripcion.setText("");
         jTextAreaDescripcion.setEnabled(false);
-    
+        this.setVisible(false);
+        super.remove(this);
     }
     
 
